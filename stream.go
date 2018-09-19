@@ -186,6 +186,7 @@ func (stream *Stream) receiveEvents(r io.ReadCloser) error {
 				stream.lastEventId = pub.Id()
 			}
 			stream.Events <- ev
+			time.Sleep(1 * time.Nanosecond)
 		}
 	}
 }
